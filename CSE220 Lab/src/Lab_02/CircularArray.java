@@ -199,19 +199,69 @@ public class CircularArray {
         size--;
     }
 
+
     //This method will check whether the array is palindrome or not
     public void palindromeCheck() {
-        //TO DO
+        boolean check=true;
+        for(int i=start, j=(start+size-1)%cir.length; i<size; i++, j--){
+            i=i%cir.length;
+            if(j<0){
+                j=cir.length-1;
+            }
+
+            if(cir[i]!=cir[j]){
+                check=false;
+                break;
+            }
+        }
+        if(check){
+            System.out.println("This array is a palindrome");
+        }
+        else{
+            System.out.println("This array is not a palindrome");
+        }
     }
 
     //This method will sort the values by keeping the start unchanged
     public void sort() {
-        //TO DO
+        int s=start;
+        for(int i=0; i<size; i++){
+            //i=i%cir.length;
+            Object x=cir[s];
+            int n=s;
+            int en=(s+1)%cir.length;
+            for(int j=(i+1);j<size; j++){
+
+                if((int)x>(int)cir[en]){
+                    n=en;
+                    x=cir[en];
+                }
+                en=(en+1)%cir.length;
+            }
+            Object temp=cir[s];
+            cir[s]=cir[n];
+            cir[n]=temp;
+            s=(s+1)%cir.length;
+        }
     }
 
     //This method will check the given array across the base array and if they are equivalent interms of values return true, or else return false
     public boolean equivalent(CircularArray k) {
-        //TO DO
-        return false; // Remove this line
+        boolean check=true;
+        if(this.size==k.size){
+            for(int i=this.start, j=k.start; i<size; i++, j++){
+                i=i%cir.length;
+                j=j%k.cir.length;
+                if(!(cir[i].equals(k.cir[j]))){
+                    check=false;
+                    break;
+                }
+            }
+        }
+        else{
+            System.out.println("Eshob keno koro bhai....size mile nai toh");
+        }
+
+        return check;
     }
 }
