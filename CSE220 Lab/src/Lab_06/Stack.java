@@ -1,4 +1,4 @@
-package Lab_07;
+package Lab_06;
 
 public interface Stack {
     // The number of items on the stack

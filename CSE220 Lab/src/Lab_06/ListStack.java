@@ -1,7 +1,4 @@
-package Lab_07;
-
-import java.io.*;
-import java.util.*;
+package Lab_06;
 
 public class ListStack implements Stack{
     int size;

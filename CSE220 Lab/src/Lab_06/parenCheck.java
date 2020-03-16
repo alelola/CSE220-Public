@@ -1,5 +1,5 @@
-package Lab_07;
-import java.util.*;
+package Lab_06;
+
 public class parenCheck {
     public boolean parenthesisCheck(String s, Stack st){
         boolean flag=false;
