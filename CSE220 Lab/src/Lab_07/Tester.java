@@ -8,7 +8,7 @@ import static java.lang.System.*;
  */
 public class Tester {
     public static void main(String[] args){
-        Queue nus=new ArrayQueue();
+        Queue nus=new ListQueue();
         try{
             out.println("\n ////TEST01////");
             out.println(nus);
